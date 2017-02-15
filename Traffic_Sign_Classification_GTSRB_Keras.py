@@ -1,7 +1,4 @@
 
-# coding: utf-8
-
-# In[2]:
 
 import numpy as np
 from sklearn.cross_validation import train_test_split
@@ -20,7 +17,6 @@ get_ipython().magic('matplotlib inline')
 import cv2
 
 
-# In[3]:
 
 nb_classes = 43
 img_size = 32
@@ -61,7 +57,6 @@ Y_train = np_utils.to_categorical(y_train, nb_classes)
 Y_test = np_utils.to_categorical(y_test, nb_classes)
 
 
-# In[6]:
 
 ## model
 
@@ -102,7 +97,6 @@ def lr_schedule(epoch):
     return lr*(0.1**int(epoch/10))
 
 
-# In[8]:
 
 ## fitting the model
 batch_size = 30
