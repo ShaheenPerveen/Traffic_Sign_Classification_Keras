@@ -106,18 +106,16 @@ model.fit(x_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch,
           verbose=1, validation_data=(x_test, Y_test))
 
 
-# In[9]:
-
+#
 validation = model.evaluate(x_test, Y_test, verbose=1)
 print('Test accuracy:', validation[1])
 
 
-# In[10]:
+#
 
 model.summary()
 
 
-# In[4]:
 
 ## testing
 import pickle
@@ -138,24 +136,16 @@ X_test= X_test.swapaxes(1,3)
 X_test.shape
 
 
-# In[12]:
 
 ## predicting the test data
 y_pred = model.predict_classes(X_test)
 
 
-# In[15]:
 
 ## saving the predicted data
 np.savetxt("submission.csv", y_pred, delimiter=",")
 
 
-# In[5]:
-
-x_train.shape
-
-
-# In[5]:
 
 ## data augmentation
 X_train, X_val, Y_train, Y_val = train_test_split(X, Y, test_size=0.2)
